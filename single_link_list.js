@@ -168,9 +168,43 @@ class SingleLinkedList{
 		return this
 	}
 
+	
+
 }
 
+function sort(l1,l2){
+	
+	const head = new Node(0) //= l1.val < l2.val ? l1 : l2
+	const tail = head
 
+	while(true){
+		if(!l1){
+			head.next = l2
+			break
+		}
+		else if(!l2){
+			head.next = l1
+			break
+		}
+		if(l1.val<=l2.val){
+			head.next = l1
+			l1 = l1.next
+		}
+		else if(l1.val>l2.val){
+			head.next = l2
+			l2 = l2.next
+		}
+		//head = head.next
+	}
+	return tail.next
 
-var node = new SingleLinkedList()
-node.push(5)
+}
+
+var l1 = new SingleLinkedList()
+var l2 = new SingleLinkedList()
+l1.push(5)
+l1.push(4)
+l1.push(10)
+l2.push(111)
+console.log(sort(l1, l2))
+
