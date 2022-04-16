@@ -23,4 +23,4 @@ function binary_search(arr, start, end, num){
 
 }
 
-binary_search([1,2,5,6,8], 0, 5,2)
+console.log(binary_search([1,2,5,6,8], 0, 5,2));
