@@ -1,14 +1,14 @@
 function collectString(obj) {
-    let res = []
+   let res = []
     for (let key in obj) {
-        if(obj[key] === 'object' && !Array.isArray(obj[key])) {
-            res = res.concat(collectString(obj))
+        if(typeof(obj[key]) === 'object' && !Array.isArray(obj[key])) {
+            res = res.concat(collectString(obj[key]))
         }
-        else if(obj[key] === 'string') {
+        else if(typeof(obj[key]) === 'string') {
             res.push(obj[key])
         }
     }
-    return res
+    return res;
 }
 
 obj = {
